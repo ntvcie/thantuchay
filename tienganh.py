@@ -81,10 +81,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 # Chỉ tải FAISS index một lần khi chạy ứng dụng
-if "vector_store" not in st.session_state:
-    with st.spinner("Đang tải dữ liệu nhúng..."):
-        embeddings = HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-large")
-        st.session_state.vector_store = FAISS.load_local("embedding_faiss_index", embeddings, allow_dangerous_deserialization=True)
 # Load FAISS Vectorstore
 @st.cache_resource
 def load_vectorstore():
