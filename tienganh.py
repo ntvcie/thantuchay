@@ -162,8 +162,8 @@ if 'past' not in st.session_state:
 col1, col2 = st.columns([1, 1])  # Cột trái chiếm 1 phần, cột phải chiếm 2 phần
 
 with col2:
-    #query = st.chat_input("Câu hỏi của bạn")
-    query = st.text_input("Câu hỏi của bạn: ", key="input")
+    query = st.chat_input("Câu hỏi của bạn")
+    #query = st.text_input("Câu hỏi của bạn: ", key="input")
     if 'messages' not in st.session_state:
         st.session_state['messages'] = []#get_initial_message()
     #Next, we process the user's query and generate the AI response.
