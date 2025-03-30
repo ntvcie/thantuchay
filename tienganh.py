@@ -86,7 +86,10 @@ st.markdown("""
 def load_vectorstore():
     with st.spinner("Đang tải dữ liệu nhúng..."):
         embeddings = HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-large")
-        return FAISS.load_local("embedding_faiss_index", embeddings, allow_dangerous_deserialization=True)
+        # Đường dẫn tới Google Drive
+        drive_path ="https://drive.google.com/drive/folders/1t5xsNs1DIC1OB4xoR1N5eZwTi1xlJKfO?usp=drive_link"
+
+        return FAISS.load_local(drive_path, embeddings, allow_dangerous_deserialization=True)
 st.session_state.vector_store = load_vectorstore()
 # Hàm truy xuất dữ liệu từ FAISS
 def retrieve_context(query, top_k=3):
