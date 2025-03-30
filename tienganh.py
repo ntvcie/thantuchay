@@ -168,7 +168,7 @@ with col2:
         st.session_state['messages'] = []#get_initial_message()
     #Next, we process the user's query and generate the AI response.
     if query:
-        with st.spinner("generating..."):
+        with st.spinner("Đang xử lý..."):
             messages = st.session_state['messages']
             messages = update_chat(messages, "user", query)
             response = get_chatgpt_response(messages, model)
