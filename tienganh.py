@@ -14,6 +14,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from huggingface_hub import login
 import nest_asyncio
 nest_asyncio.apply()
+# Load biến môi trường từ .env
+load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 openai.api_key = os.getenv('OPENAI_API_KEY')
