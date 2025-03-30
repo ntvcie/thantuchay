@@ -21,8 +21,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 openai.api_key = os.getenv('OPENAI_API_KEY')
 HF_TOKEN = os.getenv('HF_TOKEN')
 # Cấu hình Hugging Face API
-
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
+#os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
 login(HF_TOKEN)
 model = "gpt-3.5-turbo" #"gpt-4", "gpt-4o"
 client = OpenAI(
